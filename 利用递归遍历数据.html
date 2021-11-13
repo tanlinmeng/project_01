@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var date = [
+            {
+                id:1,
+                name:'家电',
+                goods:[
+                {
+                    id:11,
+                    name:'冰箱'
+                },
+                {
+                    id:12,
+                    name:'洗衣机'
+                }
+                ]
+            },
+            {
+                id:2,
+                name:'服饰'
+            }
+        ]
+
+        function fn(arr,id){
+            arr.forEach(function(e){
+                if(e.id === id){
+                    console.log(e);
+                }else if(e.goods && e.goods.length >0){
+                    fn(e.goods,id);
+                }
+            })
+        }
+        fn(date,2);
+    </script>
+</body>
+</html>
